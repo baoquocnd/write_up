@@ -12,22 +12,23 @@ phân tích nội dung file pdf, chỉ là những kí tự S T L lặp đi lặ
 T = Tab (0x09)
 L = LineFeed (0x0A)
 ta chuyển nội dung trong challenge.pdf thành whitespace, rồi chạy nó xem được gì  
-ta dùng code python để chuyển:
+ta dùng code python để chuyển:  
 [stl_to_hex.py](https://github.com/user-attachments/files/25169135/stl_to_hex.py)  
-file này giúp ta
+file này giúp ta  
 trích S/T/L từ PDF theo đúng thứ tự  
 map S/T/L → whitespace (space/tab/newline) để ra source code whitespace  
-chạy chương trình whitespace và ra được output là hex
-<img width="1397" height="101" alt="image" src="https://github.com/user-attachments/assets/3ffc6a0b-63c9-4fed-a2c8-50a2636c72c8" />
-XOR : dữ liệu gốc = key ^ dữ liệu bị mã hóa
-mã hex ta vừa nhận được từ chạy chương trình whitespace là dữ liệu bị mã hóa
-vậy key là gì? ta nhớ lại những gì bài cho mà mình chưa xài=)) có thể là manh mối.
-embedded file you_cannot_read_this.txt có nội dung : just ######## this line you will have flag.
-ta dùng nó làm key để xor với mã hex
-độ dài bytes của cả 2 bằng nhau nên chắc rằng là chuẩn ròi...
+chạy chương trình whitespace và ra được output là hex  
+<img width="1397" height="101" alt="image" src="https://github.com/user-attachments/assets/3ffc6a0b-63c9-4fed-a2c8-50a2636c72c8" />  
+XOR : dữ liệu gốc = key ^ dữ liệu bị mã hóa  
+
+mã hex ta vừa nhận được từ chạy chương trình whitespace là dữ liệu bị mã hóa  
+vậy key là gì? ta nhớ lại những gì bài cho mà mình chưa xài=)) có thể là manh mối.  
+embedded file you_cannot_read_this.txt có nội dung : just ######## this line you will have flag.  
+ta dùng nó làm key để xor với mã hex  
+độ dài bytes của cả 2 bằng nhau nên chắc rằng là chuẩn ròi...  
 chạy file python để xor  
-[solve.py](https://github.com/user-attachments/files/25169432/solve.py)
-oke ra lun flag: <img width="2559" height="102" alt="image" src="https://github.com/user-attachments/assets/c06ecfd6-a197-48b6-a8d6-66d775c92bb3" />
+[solve.py](https://github.com/user-attachments/files/25169432/solve.py)  
+oke ra lun flag: <img width="2559" height="102" alt="image" src="https://github.com/user-attachments/assets/c06ecfd6-a197-48b6-a8d6-66d775c92bb3" />  
 vậy flag là: InfosecPTIT{y0u_c4n_501v3_1t_345i1y_innit?}  
 
 
